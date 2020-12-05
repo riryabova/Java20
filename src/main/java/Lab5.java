@@ -2,6 +2,7 @@ import calculatorOOP.Addition;
 import calculatorOOP.Division;
 import calculatorOOP.Multiplication;
 import calculatorOOP.Subtraction;
+import com.sun.source.tree.TryTree;
 
 import java.util.Scanner;
 //Задание №5:
@@ -21,6 +22,7 @@ public class Lab5 {
         System.out.println("Input number");
         double num = scanner.nextDouble();
         return (num);
+
     }
 
     public static void operation(double num1, double num2) {
@@ -46,23 +48,39 @@ public class Lab5 {
             switch (y) {
                 case 1:
                     //Сложение
-                    Addition add = new Addition(num1, num2);
-                    System.out.println("Result = " + add.opAddition(add));
+                    try {
+                        Addition add = new Addition(num1, num2);
+                        System.out.println("Result = " + add.opAddition(add));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
                     // вычитание
-                    Subtraction sub = new Subtraction(num1, num2);
-                    System.out.println("Result = " + sub.opSubtraction(sub));
+                    try {
+                        Subtraction sub = new Subtraction(num1, num2);
+                        System.out.println("Result = " + sub.opSubtraction(sub));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 3:
                     // деление
-                    Division division = new Division(num1, num2);
-                    System.out.println("Result = " + division.opDivision(division));
+                    try {
+                        Division division = new Division(num1, num2);
+                        System.out.println("Result = " + division.opDivision(division));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
                     // умножение
-                    Multiplication mult = new Multiplication(num1, num2);
-                    System.out.println("Result = " + mult.opMultiplication(mult));
+                    try {
+                        Multiplication mult = new Multiplication(num1, num2);
+                        System.out.println("Result = " + mult.opMultiplication(mult));
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
             }
         }
